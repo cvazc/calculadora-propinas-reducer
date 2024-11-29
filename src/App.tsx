@@ -28,22 +28,22 @@ function App() {
                             <MenuItem
                                 key={item.id}
                                 item={item}
-                                addItem={addItem}
+                                dispatch={dispatch}
                             />
                         ))}
                     </div>
                 </div>
 
                 <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-                    {order.length ? (
+                    {state.order.length ? (
                         <>
                             <OrderContents
-                                order={order}
+                                order={state.order}
                                 removeItem={removeItem}
                             />
                             <TipPercentageForm setTip={setTip} tip={tip} />
                             <OrderTotals
-                                order={order}
+                                order={state.order}
                                 tip={tip}
                                 placeOrder={placeOrder}
                             />
